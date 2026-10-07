@@ -1,0 +1,68 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #ffffff;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Palette Sequence Bar */
+.palette {
+  display: flex;
+  gap: 3px;
+}
+
+.palette-swatch {
+  width: 25px;
+  height: 25px;
+  box-sizing: border-box;
+}
+
+/* Subtly pulse/highlight the current target color to guide the player */
+.palette-swatch.active-target {
+  transform: scale(1.15);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* 3x3 Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 140px);
+  grid-template-rows: repeat(3, 80px);
+  gap: 12px;
+}
+
+/* Reusable Box */
+.box {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+}
+
+.box:hover {
+  transform: translateY(-2px);
+}
